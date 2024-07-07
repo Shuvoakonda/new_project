@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    ---primary-color: #ffd99b;
+    ---secondary-color: #ff7143;
+    ---dark-color: #000000;
+    ---white-color: #ffffff;
+
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    
+}
+.logo-img img{
+    width:  100px;
+    height: 80px;
+    object-fit: cover;
+}
+body {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 42%, #ffd99b 100%) no-repeat;
+}
+
+
+.navbar {
+    margin-top: 100px;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    padding: 0px 80px;
+
+    z-index: 10;
+}
+
+.stickynav {
+    background-color: #fff;
+    position: fixed;
+    width: 90%;
+    transform: translate(-5%,10%);
+    border-radius: 20px;
+    margin-top: 0px !important;
+    padding: 0px 30px;
+    transition: background-color .1s ease-in-out, padding .1s ease-in-out;
+    box-shadow: #000000 0px 5px 5px;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navitems {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-right: 1px solid;
+    padding-right: 20px;
+}
+
+
+.primary-navitem {
+    box-shadow: var(---secondary-color) 0px 0px 0px 3px;
+    padding: 2px 25px;
+    border-radius: 30px;
+    border: 2px solid var(---white-color);
+    color: var(---white-color);
+    background-color: var(---secondary-color);
+    text-decoration: none;
+}
+
+.scondary-navitem {
+    box-shadow: var(---white-color) 0px 0px 0px 3px;
+    padding: 2px 25px;
+    border-radius: 30px;
+    border: 2px solid var(---secondary-color);
+    color: var(---secondary-color);
+    background-color: var(---white-color);
+    text-decoration: none;
+}
+
+.nav-phone {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-phone i {
+    color: var(---secondary-color);
+}
+
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+}
+
+.site-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+}
+
+.top-title {
+    font-size: 3.5rem;
+}
+
+.main-img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.product {
+    position: relative;
+    border: 2px solid var(---white-color);
+    border-radius: 60px;
+    width: auto;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: #948b8b 0px 0px 5px 2px;
+    text-decoration: none;
+    border: transparent 4px solid;
+    transition: .2s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.product:hover {
+    border: var(---secondary-color) 4px solid;
+
+}
+
+
+.product:hover .product-name {
+
+    position: absolute;
+    top: 18px;
+
+}
+
+.product .icon {
+
+    position: absolute;
+    left: 30px;
+    opacity: 0;
+    transition: .2s ease-in-out;
+}
+
+
+.product:hover .product::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f053';
+
+}
+
+.product:hover .product-icon {
+
+    top: -50px;
+
+}
+
+.product:hover .icon {
+
+    left: 25px;
+    opacity: 1;
+
+}
+
+.product span {
+    transition: .2s ease-out;
+}
+
+.product-icon {
+    position: absolute;
+    top: -45px;
+    left: 40px;
+    height: 60px;
+    transition: .1s ease-out;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+
+}
+
+.wp-popup {
+    position: fixed;
+    left: 40px;
+    bottom: 20px;
+}
+
+.wpicon {
+    position: absolute;
+    top: -5px;
+    left: -20px;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: #075E54;
+    color: #fff !important;
+    font-size: 40px;
+    border: 3px solid transparent;
+    transition: .1s ease-out;
+    box-shadow: #000000 0px 0px 5px 0px;
+}
+
+.wpicon:hover {
+    border: 3px solid #075e54a3;
+    font-size: 45px;
+}
+
+.wp-dialog {
+
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    background-color: #075E54;
+    transition: .2s ease-in;
+}
+
+.wp-dialog p {
+
+    width: 70%;
+    margin: 10% 20%;
+    color: #fff;
+    font-size: .8em;
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+.dialog-hidden {
+    width: 0px !important;
+}
+
+.dialog-hidden p {
+    transition: 0s ease-in;
+    opacity: 0;
+}
+
+
+.wp-dialog img{
+    position: absolute;
+    height: 120px;
+    right:-50px;
+    top:-40px;
+    opacity: 1;
+    transition:opacity .2s ease-in;
+}
+
+.dialog-hidden img{
+    opacity: 0;
+    transition: 0s ease-in;
+ 
+}
+/* // Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* .container-fluid {
+        padding: 0px;
+    }
+
+    .navbar {
+        margin-top: 0px !important;
+        font-size: 18px;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 5px;
+        z-index: 10;
+    }
+
+    .navbar-content {
+        display: flex !important;
+        align-items: start !important;
+        gap: 20px;
+    }
+
+    .scondary-navitem {
+        box-shadow: var(---white-color) 0px 0px 0px 3px;
+        padding: 2px 25px;
+        border-radius: 30px;
+        border: 2px solid var(---secondary-color);
+        color: var(---secondary-color);
+        background-color: var(---white-color);
+        text-decoration: none;
+    }
+
+    .navitems {
+        margin-top: 6px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        border-right: 2px solid;
+        padding-right: 20px;
+    }
+
+    .logo-img {
+        height: 60px;
+        width: 60px;
+        margin-top: -17px;
+        margin-right: 15px;
+    }
+
+    .main-img {
+        height: 50vh;
+        width: 50vh;
+    }
+
+    .product {
+        position: relative;
+        border: 2px solid var(---white-color);
+        border-radius: 60px;
+        padding: 6px 0px;
+        width: 244px;
+        margin: 25px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: #948b8b 0px 0px 5px 2px;
+        text-decoration: none;
+        border: transparent 4px solid;
+        transition: .2s ease-out;
+    }
+
+    .product-icon {
+        position: absolute;
+        top: -31px;
+        left: 28px;
+        height: 40px;
+        transition: .1s ease-out;
+      }
+      .products-mb{
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      } */
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    ...
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    ...
+}
