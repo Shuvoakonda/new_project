@@ -15,6 +15,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .thumb{
+            transform: scale(1) !important;
+            
+        }
+        .thumb::after{
+            background: black !important;
+        }
+    </style>
 </head>
 
 <body class="rtl">
@@ -215,7 +224,7 @@
             <div class="calculator-body">
                 <div class="card" style="width:1034px; height:550px;">
                     <div class="card-body ">
-                        <div class="row mx-auto mb-3" style="width: 80%;">
+                        <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-12">
                                 <div class="row ">
                                     <div class="col-md-10">
@@ -231,7 +240,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mx-auto mb-3" style="width: 80%;">
+                        <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-12">
                                 <div class="row ">
                                     <div class="col-md-10">
@@ -247,7 +256,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mx-auto mb-3" style="width: 80%;">
+                        <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-12">
                                 <div class="row ">
                                     <div class="col-md-10">
@@ -264,7 +273,7 @@
                             </div>
                         </div>
 
-                        <div class="row mx-auto mb-3" style="width: 80%;">
+                        <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-6">
                                 <div class="form-group row">
                                     <div class="col-md-8">
@@ -287,7 +296,7 @@
                             </div>
                         </div>
 
-                        <div class="row mx-auto mb-3" style="width: 80%;">
+                        <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-12 ">
                                 <div class="row">
                                     <div class="col-md-9">
@@ -370,6 +379,7 @@
         const range = new Range(document.querySelector('.range'));
 
     </script>
+
     <script>
         window.addEventListener('scroll', function () {
             let scrollPosition = window.scrollY;
@@ -383,7 +393,9 @@
             }
         })
     </script>
+
     <script>
+
         function toggleWP() {
 
             var whatsappBoxLeft = document.querySelector('.wp-dialog');

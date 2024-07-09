@@ -381,16 +381,12 @@ body {
 }
 
 
-.form-range::after {
-    content: "1232";
-    background-color: red;
-    position: absolute;
-    top: 10px;
-}
+
 
 .calculator-body {
-        text-align: center;
-        display: flex;
-        justify-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 
-    }
+}
+
