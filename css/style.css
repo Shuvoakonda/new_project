@@ -281,7 +281,7 @@ body {
 }
 
 
-@media  (min-width: 360px) and (max-width: 400px) {
+@media (min-width: 360px) and (max-width: 400px) {
 
 
     .site-title {
@@ -293,14 +293,15 @@ body {
     }
 
     .top-title {
-        font-size:25px;
+        font-size: 25px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 }
-@media  (min-width: 400px) and (max-width: 500px) {
+
+@media (min-width: 400px) and (max-width: 500px) {
 
 
     .site-title {
@@ -312,14 +313,15 @@ body {
     }
 
     .top-title {
-        font-size:25px;
+        font-size: 25px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 }
-@media  (min-width: 501px) and (max-width: 795px) {
+
+@media (min-width: 501px) and (max-width: 795px) {
 
 
     .site-title {
@@ -331,10 +333,56 @@ body {
     }
 
     .top-title {
-        font-size:34px;
+        font-size: 34px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+}
+
+.cost-calculator {
+    justify-content: center;
+    align-items: center;
+}
+
+.cost-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+}
+
+
+.range-metar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.range-h {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.select-opt{
+    width: 300px;
+}
+
+.form-range::-moz-range-thumb{
+    background-color: var(---secondary-color) !important; 
+}
+.form-range::-webkit-slider-thumb{
+    background-color: var(---secondary-color) !important; 
+}
+
+
+.form-range::after{
+    content: "1232";
+    background-color: red;
+    position: absolute;
+    top: 10px;
 }
