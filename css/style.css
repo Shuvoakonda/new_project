@@ -368,21 +368,29 @@ body {
 }
 
 
-.select-opt{
+.select-opt {
     width: 300px;
 }
 
-.form-range::-moz-range-thumb{
-    background-color: var(---secondary-color) !important; 
+.form-range::-moz-range-thumb {
+    background-color: var(---secondary-color) !important;
 }
-.form-range::-webkit-slider-thumb{
-    background-color: var(---secondary-color) !important; 
+
+.form-range::-webkit-slider-thumb {
+    background-color: var(---secondary-color) !important;
 }
 
 
-.form-range::after{
+.form-range::after {
     content: "1232";
     background-color: red;
     position: absolute;
     top: 10px;
 }
+
+.calculator-body {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+    }
