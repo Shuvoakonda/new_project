@@ -16,11 +16,12 @@
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .thumb{
+        .thumb {
             transform: scale(1) !important;
-            
+
         }
-        .thumb::after{
+
+        .thumb::after {
             background: black !important;
         }
     </style>
@@ -100,10 +101,7 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
+   
     <section class="container-fluid">
         <div class="row g-3">
             <div class="col-sm-12 col-md-12 col-lg-6">
@@ -209,30 +207,32 @@
     <section
         style="background: linear-gradient(0deg, #ffd99b 40%,  rgba(255, 255, 255, 1) 100%) no-repeat;position: relative;"
         class="pb-5">
-        <img src="assets/images/people.png" class="d-none d-lg-block"
-            style="position:absolute;z-index: 10;right:40px;bottom:20px;" height="350" alt="">
+        <img src="assets/images/people.png" class="d-none d-lg-block" style="position:absolute;z-index: 10;right: 125px;
+  bottom: 49px;" height="450" alt="">
         <div class="calculator container">
-            <div class="calculator-header text-center">
-                <h2>
-                    Cost Calculator
-                </h2>
-                <p>
-                    ? Need to know how mouch your remodel will cost? This tool will help estimate the cost of remodeling
-                    projects.
-                </p>
-            </div>
             <div class="calculator-body">
-                <div class="card" style="width:1034px; height:550px;">
+                <div class="card" style="width:700px; height:auto;">
                     <div class="card-body ">
-                        <div class="row mx-auto mb-4" style="width: 80%;">
+                        <div class="calculator-header text-center">
+                            <h2>
+                                Cost Calculator
+                            </h2>
+                            <p class="" >
+                                 Need to know how mouch your remodel will cost? This tool will help estimate the cost
+                                of remodeling
+                                projects ?
+                            </p>
+                        </div>
+                        <div class="row mx-auto mb-4 mt-5" style="width: 80%;">
                             <div class="col-12">
                                 <div class="row ">
-                                    <div class="col-md-10">
+                                    <div class="col-md-8 col-sm-7">
                                         <div class="range" data-mdb-range-init style="direction: ltr;">
-                                            <input type="range" class="form-range" id="customRange1" min="0" />
+                                            <input type="range" class="form-range" id="customRange1" min="0" value="0"
+                                                step=".5" />
                                         </div>
                                     </div>
-                                    <div class="col-md-2 ">
+                                    <div class="col-md-4 col-sm-5">
                                         <label class="form-label" for="customRange1">: <small>Square</small>
                                             Meter</label>
 
@@ -243,12 +243,13 @@
                         <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-12">
                                 <div class="row ">
-                                    <div class="col-md-10">
+                                    <div class="col-md-8 col-sm-7">
                                         <div class="range" data-mdb-range-init style="direction: ltr;">
-                                            <input type="range" class="form-range" id="customRange1" min="0" />
+                                            <input type="range" class="form-range" id="customRange1" min="0" value="0"
+                                                step=".5" />
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-4 col-sm-5">
                                         <label class="form-label" for="customRange1">: <small>Square</small>
                                             Meter</label>
 
@@ -259,12 +260,13 @@
                         <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-12">
                                 <div class="row ">
-                                    <div class="col-md-10">
+                                    <div class="col-md-8 col-sm-7">
                                         <div class="range" data-mdb-range-init style="direction: ltr;">
-                                            <input type="range" class="form-range" id="customRange1" min="0" />
+                                            <input type="range" class="form-range" id="customRange1" min="0" value="0"
+                                                step=".5" />
                                         </div>
                                     </div>
-                                    <div class="col-md-2 ">
+                                    <div class="col-md-4 col-sm-5">
                                         <label class="form-label" for="customRange1">: <small>Square</small>
                                             Meter</label>
 
@@ -274,22 +276,22 @@
                         </div>
 
                         <div class="row mx-auto mb-4" style="width: 80%;">
-                            <div class="col-6">
+                            <div class="col-12 mb-3">
                                 <div class="form-group row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 col-sm-7">
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4 col-sm-5">
                                         <label for="">: Width</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="form-group row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 col-sm-7">
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4 col-sm-5">
                                         <label for="">: Height</label>
                                     </div>
                                 </div>
@@ -299,23 +301,22 @@
                         <div class="row mx-auto mb-4" style="width: 80%;">
                             <div class="col-12 ">
                                 <div class="row">
-                                    <div class="col-md-9">
+                                    <div class="col-md-8 col-sm-7">
                                         <select class="form-control">
-                                            <option selected>Open this select menu</option>
+                                            <option selected>Select menu</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4 col-sm-5">
                                         <label for="floatingSelect">: Works with selects</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <br>
-                        <hr class="mt-5">
+                        <hr class="">
 
                         <div class="d-flex flex-wrap gap-3 justify-content-around">
 

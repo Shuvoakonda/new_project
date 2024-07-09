@@ -40,7 +40,7 @@ body {
     align-items: center;
     margin-top: 40px;
     padding: 0px 80px;
-    z-index: 10;
+    z-index: 999;
 }
 
 .stickynav {
