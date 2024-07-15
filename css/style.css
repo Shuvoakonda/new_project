@@ -329,8 +329,6 @@ body {
 }
 
 @media (min-width: 401px) and (max-width: 501px) {
-
-
     .site-title {
         display: flex;
         flex-direction: column;
@@ -338,7 +336,6 @@ body {
         align-items: center;
         background-color: #ffff;
     }
-
     .top-title {
         font-size: 25px;
         display: flex;
@@ -446,10 +443,10 @@ body {
     font-size: 70px;
     padding: 0px !important;
     margin: 0px !important;
-    
+
 }
 
-.bdr{
+.bdr {
     margin-bottom: 20px;
     width: 300px;
     height: 2px;
@@ -484,4 +481,116 @@ body {
     height: 300px;
     width: 100%;
     object-fit: cover;
+}
+
+.footer {
+    background-color: var(---secondary-color);
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 20px;
+}
+
+.footer-col h4 {
+    font-size: 22px;
+    color: #000000;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 13px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-align: right;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(---dark-color);
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(29, 27, 27, 0.2);
+    margin: 8px 0px 8px 20px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #ff0000;
+    background-color: #ffffff;
+}
+
+.bdr-footer {
+    margin-bottom: 20px;
+    width: 150px;
+    height: 2px;
+    background-color: var(---white-color);
+    margin-right: start;
+    text-align: right;
+}
+.logo-footer img{
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+    .footer-col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-col h4 {
+        text-align: center;
+    }
+
+    .footer-col ul li a {
+        text-align: center;
+    }
+
+  
+
+    .logo-footer {
+        text-align: center;
+    }
+
+    .bdr-footer {
+        margin: 0px auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+
+    .footer-col h4 {
+        text-align: center;
+    }
+
+    .footer-col ul li a {
+        text-align: center;
+    }
 }
