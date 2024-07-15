@@ -151,11 +151,11 @@ body {
 
 
 .product:hover .product-name {
-
     position: absolute;
     top: 18px;
 
 }
+
 
 .product .icon {
 
@@ -200,6 +200,7 @@ body {
 .product-name {
     font-size: 1.3rem;
     font-weight: 600;
+    color: #000000;
 
 }
 
@@ -433,4 +434,54 @@ body {
         margin-top: 20px !important;
         margin-bottom: 20px !important;
     }
+}
+
+.product-header {
+    /* background-color: var(---secondary-color); */
+    color: var(---dark-color);
+    border-radius: 15px;
+
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 70px;
+    padding: 0px !important;
+    margin: 0px !important;
+    
+}
+
+.bdr{
+    margin-bottom: 20px;
+    width: 300px;
+    height: 2px;
+    background-color: var(---secondary-color);
+    margin-right: auto;
+}
+
+.product-header span {
+    font-size: 50px;
+}
+
+.product-card {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card-img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    transition: .2s;
+
+}
+
+.card-img:hover {
+    scale: 1.1;
+}
+
+.card-video {
+    border-radius: 15px;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
 }
