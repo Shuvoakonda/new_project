@@ -451,7 +451,7 @@ body {
     width: 300px;
     height: 2px;
     background-color: var(---secondary-color);
-    margin-right: auto;
+    margin-left: auto;
 }
 
 .product-header span {
@@ -545,8 +545,8 @@ body {
     width: 150px;
     height: 2px;
     background-color: var(---white-color);
-    margin-right: start;
-    text-align: right;
+    margin-right: left;
+    text-align: end;
 }
 .logo-footer img{
     width: 180px;
