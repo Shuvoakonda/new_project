@@ -336,6 +336,7 @@ body {
         align-items: center;
         background-color: #ffff;
     }
+
     .top-title {
         font-size: 25px;
         display: flex;
@@ -548,7 +549,18 @@ body {
     margin-right: left;
     text-align: end;
 }
-.logo-footer img{
+
+.bdr-slider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 5vh%;
+    height: 1px;
+    background-color: var(---dark-color);
+
+
+}
+
+.logo-footer img {
     width: 180px;
     height: 100px;
     object-fit: cover;
@@ -569,7 +581,7 @@ body {
         text-align: center;
     }
 
-  
+
 
     .logo-footer {
         text-align: center;
@@ -593,4 +605,231 @@ body {
     .footer-col ul li a {
         text-align: center;
     }
+}
+
+.w-slide {
+    position: relative;
+}
+
+.w-input {
+    position: absolute;
+    right: 75px;
+    top: -2px;
+}
+
+.h-input {
+    position: absolute;
+    right: 50px;
+    bottom: 2px;
+}
+
+.w-input-cm {
+    position: absolute;
+    right: 48px;
+    top: 10px;
+}
+
+.h-input-cm {
+    position: absolute;
+    right: 22px;
+    bottom: 1px;
+}
+
+
+
+.form-control:focus {
+    box-shadow: none !important;
+    transition: all .1s linear;
+    border-color: #000 !important;
+    box-shadow: inset 0px 0px 0px 1px #0f0f0f !important;
+}
+.slider-1{
+    row-gap: 2;
+}
+
+.slider-1 img {
+    border: 2px solid var(---dark-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-2 {
+    border: 2px solid var(---dark-color);
+}
+
+.slider-2 img {
+    border: 2px solid var(---dark-color);
+    margin: 6px auto;
+    border-radius: 75%;
+    cursor: pointer;
+    width: 75%;
+}
+
+.slider2-font {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.img-unit {
+    position: relative;
+}
+
+.slider2-unit {
+    position: absolute;
+    right: 30px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.slider2-unit-2 {
+    position: absolute;
+    right: 0px;
+    top: -8px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+@media(max-width: 776px) {
+    .h-input {
+        position: absolute;
+        right: 16px;
+        bottom: 0px;
+    }
+
+    .h-input-cm {
+        position: absolute;
+        right: -11px;
+        bottom: 1px;
+    }
+
+    .slider2-unit-2 {
+        position: absolute;
+        right: 6px;
+        font-size: 10px;
+    }
+
+
+}
+
+@media(min-width: 360px) and (max-width: 450px) {
+    .h-input {
+        position: absolute;
+        right: 70px;
+        bottom: -8px;
+    }
+
+    .h-input-cm {
+        position: absolute;
+        right: 42px;
+        bottom: -10px;
+    }
+
+    .w-input {
+        position: absolute;
+        right: 60px;
+        top: -2px;
+    }
+
+    .w-input-cm {
+        position: absolute;
+        right: 32px;
+        top: 10px;
+    }
+
+
+}
+
+.slider-3 img {
+    border: 2px solid var(---dark-color);
+    margin: 6px auto;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 75%;
+}
+
+.slider3-unit-3 {
+    position: absolute;
+    top: -6px;
+    right: 40px;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+
+.slider-4-bdr {
+    border: 2px solid var(---dark-color);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    margin: 6px auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider4-font {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.slider4-unit-4 {
+    position: absolute;
+    right: 30px;
+    top: -8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.slider-5-bdr {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(---dark-color);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    margin: 6px auto;
+    cursor: pointer;
+}
+
+.slider5-unit-5 {
+    position: absolute;
+    right: -30px;
+    top: -22px;
+    font-weight: 600;
+}
+
+.slider-6-bdr {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(---dark-color);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    margin: 6px auto;
+    cursor: pointer;
+}
+
+.slider6-unit-6 {
+    position: absolute;
+    right: -30px;
+    top: -22px;
+    font-weight: 600;
+}
+
+.n-bdr {
+    border: 2px solid var(---dark-color);
+    border-radius: 10px;
+    height: 100px;
+    width: 75%;
+
+}
+
+textarea:focus-visible {
+    border: none;
+    color: #000000;
 }

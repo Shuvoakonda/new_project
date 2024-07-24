@@ -1,0 +1,549 @@
+<!doctype html>
+<html dir="rtl" lang="he-IL">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .thumb {
+            transform: scale(1) !important;
+
+        }
+
+        .thumb::after {
+            background: black !important;
+        }
+    </style>
+</head>
+
+<body class="rtl">
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="logo-img">
+                <a href="index.html"><img src="assets/images/nav-logo.svg" alt=""></a>
+            </div>
+            <div class="navbar-content">
+                <div class="nav-phone  d-none d-md-block">
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        054-820-0039
+                    </span>
+                </div>
+                <ul class="navitems d-none d-lg-flex">
+                    <li class="navitem">
+                        <a href="contact_us.html" class="primary-navitem">
+                            Contact Us
+                        </a>
+                    </li>
+                    <li class="navitem">
+                        <a href="our_profiles.html" class="scondary-navitem">
+                            Our Policy
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <button class="nav-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex d-lg-none justify-content-between flex-column h-100">
+                <div class="d-flex gap-4 flex-column">
+                    <div class="d-flex w-100 justify-content-around">
+
+                        <a href="contact_us.html" class="primary-navitem">
+                            Contact Us
+                        </a>
+                        <a href="our_profiles.html" class="scondary-navitem">
+                            Our Policy
+                        </a>
+                    </div>
+                    <div class="nav-phone text-center">
+                        <i class="fa fa-phone"></i>
+                        <span>
+                            054-820-0039
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <section
+        style="background: linear-gradient(0deg, #ffd99b 40%,  rgba(255, 255, 255, 1) 100%) no-repeat;position: relative;"
+        class="pb-5">
+        <img src="assets/images/people.png" class="d-none d-lg-block"
+            style="position:absolute;z-index: 10;right: 200px; bottom: 49px;" height="300" alt="">
+        <div class="calculator container">
+            <div class="calculator-body">
+                <div class="card" style="width:700px; height:auto;">
+                    <div class="card-body p-1">
+                        <div class="row">
+                            <div class="calculator-header text-center text-dark">
+                                <h2 class="mt-4">
+                                    Cost Calculator
+                                </h2>
+                                <p class="" style="direction: ltr;">
+                                    This tool will help estimate the cost <strong>sliding window</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4 mx-2">
+                            <div class="col-md-6  col-12">
+                                <label for="" class="text-dark" style="font-size: 12px; font-weight: 500;">opnening
+                                    width size</label>
+                                <div class="range mb-4" data-mdb-range-init style="direction: ltr;">
+                                    <input type="range" class="form-range" id="customRange1" min="0" value="0"
+                                        step=".5" />
+                                </div>
+                                <label for="" class="text-dark" style="font-size: 12px; font-weight: 500;">opnening
+                                    height size</label>
+                                <div class="range" data-mdb-range-init style="direction: ltr;">
+                                    <input type="range" class="form-range" id="customRange1" min="0" value="0"
+                                        step=".5" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="w-slide">
+                                    <input type="text" class="form-control w-input text-center text-dark"
+                                        style="width: 60px; height: auto;" value="20.1">
+                                    <span class="w-input-cm">cm</span>
+                                    <img src="assets/images/window-slide.png" style="height: 200px;width: auto;" alt="">
+                                    <input type="text" class="form-control h-input text-center text-dark"
+                                        style="width: 60px; height: auto;" value="20.1">
+                                    <span class="h-input-cm">cm</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="slider-1 mt-4">
+                            <div class="card">
+                                <div class="card-body p-2">
+                                    <div class="row">
+                                        <div class="col-md-3 col-6 col-sm-6">
+                                            <div x-data="{ expanded: false }"
+                                                class="d-flex flex-column align-items-center">
+                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
+                                                    src="assets/images/window-sld.jpg" alt="">
+                                                <label for="">dry-keep</label>
+                                                <div class="d-flex mx-auto">
+                                                    <img x-show="expanded" x-collapse src="/assets/door.svg" alt=""
+                                                        style="width:100px; height: 100px;">
+                                                    <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
+                                                        style="width:100px; height: 100px;">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-6 col-sm-6">
+                                            <div class="d-flex flex-column align-items-center">
+                                                <img style="width:150px; height: 150px;"
+                                                    src="assets/images/window-slide.png" alt="">
+                                                <label for="">keep</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-6 col-sm-6">
+                                            <div class="d-flex flex-column align-items-center">
+                                                <img style="width:150px; height: 150px;"
+                                                    src="assets/images/window-slide.png" alt="">
+                                                <label for="">hinges</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-6 col-sm-6">
+                                            <div class="d-flex flex-column align-items-center">
+                                                <img style="width:150px; height: 150px;"
+                                                    src="assets/images/window-sld.jpg" alt="">
+                                                <label for="">sliding</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="slider-2 mt-4">
+                            <div class="row g-2">
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column">
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-sld.jpg"
+                                            alt="">
+                                        <label class="slider2-font">no add on</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider2-unit">80+</span>
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">top add on</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <span class="slider2-unit">220+</span>
+                                        <label class="slider2-font">top rounded add on</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider2-unit">80+</span>
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">bottom add on</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column">
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">no shutter</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider2-unit-2" style="direction: ltr;">+450
+                                            +250/m</span>
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">manual shutter</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider2-unit-2" style="direction: ltr;">+1200
+                                            +250/m</span>
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">electric shutter</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider2-unit-2" style="direction: ltr;">+2500
+                                            +350/m</span>
+                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">outer shutter</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="slider-3 mt-4">
+                            <div class="row g-2">
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider3-unit-3" style="direction: ltr;">+120</span>
+                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">one sided reflective</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider3-unit-3" style="direction: ltr;">+50</span>
+                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">chinchila glass</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider3-unit-3" style="direction: ltr;">+50</span>
+                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">milky glass</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column">
+                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
+                                            alt="">
+                                        <label class="slider2-font">clear glass</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-4 mt-4">
+                            <div class="row">
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider4-unit-4" style="direction: ltr;">+230nis</span>
+                                        <div class="slider-4-bdr ">
+                                            <label class="slider4-font">RAL</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider4-unit-4" style="direction: ltr;">+135nis</span>
+                                        <div class="slider-4-bdr" style="background-color: var(---secondary-color);">
+                                            <label class="slider4-font">capuchino</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <span class="slider4-unit-4" style="direction: ltr;">+135nis</span>
+                                        <div class="slider-4-bdr" style="background-color: #53504bfe;">
+                                            <label class="slider4-font">dark</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6 col-sm-6">
+                                    <div class="d-flex flex-column img-unit">
+                                        <div class="slider-4-bdr">
+                                            <label class="slider4-font"></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="bdr-slider"></div>
+                        <div class="slider-5 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 col-6 col-sm-6">
+                                            <div class="slider-5-bdr">
+                                                <span class="slider5-unit-5" style="direction: ltr;">-85nis/m</span>
+                                                <label class="slider4-font" style="direction: ltr;">2.5
+                                                    Rails</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 col-6 col-sm-6 text-center">
+                                            <div class="slider-5-bdr">
+                                                <label class="slider4-font">3.5 Rails</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="slider-6 mt-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 col-6 col-sm-6">
+                                            <div class="slider-6-bdr">
+                                                <span class="slider6-unit-6" style="direction: ltr;">+80nis/m</span>
+                                                <label class="slider6-font" style="direction: ltr;">need
+                                                    dissamble</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 col-6 col-sm-6 text-center">
+                                            <div class="slider-6-bdr">
+                                                <label class="slider4-font">no dissamble</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <textarea class="n-bdr text-start p-1" name="" id=""
+                                    placeholder=" : nerrative"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="{ expanded: false }">
+                        <button>Toggle Content</button>
+
+                        <p x-show="expanded" x-collapse>
+                            ...
+                        </p>
+                    </div>
+                    <hr class="hr">
+                    <div class="row">
+                        <div class="col-8 col-md-9 d-flex justify-content-around align-items-center">
+                            <!-- <button class="btn send-btn" style="font-size: 12px;">
+                                <i class="fa fa-chevron-right"></i>clone AND Add to cart</button> -->
+                            <button class="btn send-btn" style="font-size: 12px;">
+                                <i class="fa fa-chevron-right"></i> Add to cart</button>
+                            <h3 class="price text-dark">
+                                660.00 $
+                            </h3>
+
+                        </div>
+                        <div class="col-4 col-md-3 d-flex justify-content-start align-items-center gap-2">
+
+                            <h3 class="total text-dark">: Total</h3>
+                            <i class="fa fa-money-bill h3" style="color:var(---secondary-color)"></i>
+                        </div>
+                    </div>
+
+                    <hr class="">
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="footer-col text-center">
+                    <h4>get help</h4>
+                    <div class="bdr-footer"></div>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col text-center">
+                    <h4>Quick Links</h4>
+                    <div class="bdr-footer"></div>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="our_profiles.html">our policy</a></li>
+                        <li><a href="contact_us.html">contact us</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col text-center">
+                    <h4>company</h4>
+                    <div class="bdr-footer"></div>
+                    <ul>
+                        <li><a href="contact_us.html">contact us</a></li>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="bdr-footer"></div>
+                    <div class="logo-footer">
+                        <a href="index.html"><img src="assets/images/nav-logo.svg" alt=""></a>
+                    </div>
+                    <div class="social-links mx-auto">
+                        <div class="text-center">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="wp-popup">
+        <div class="wp-dialog dialog-hidden">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, distinctio?
+            </p>
+            <img src="assets/images/support.png" alt="">
+        </div>
+        <div class="wpicon" onclick="toggleWP()">
+            <i class="fab fa-whatsapp ">
+            </i>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="js/mdb.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+        integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module">
+        const range = new Range(document.querySelector('.range'));
+
+    </script>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            let scrollPosition = window.scrollY;
+
+            const navbar = document.getElementById('navbar');
+            if (scrollPosition > 50) {
+                navbar.classList.add('stickynav')
+            } else {
+                navbar.classList.remove('stickynav')
+
+            }
+        })
+    </script>
+
+    <script>
+
+        function toggleWP() {
+
+            var whatsappBoxLeft = document.querySelector('.wp-dialog');
+            whatsappBoxLeft.classList.toggle('dialog-hidden');
+            // var toggleIcon = document.getElementById('toggle-whatsapp-icon');
+            // if (toggleIcon.classList.contains('fa-times')) {
+            //     toggleIcon.classList.remove('fa-times');
+            //     toggleIcon.classList.add('fa-chevron-right');
+            // } else {
+            //     toggleIcon.classList.remove('fa-chevron-right');
+            //     toggleIcon.classList.add('fa-times');
+            // }
+        }
+    </script>
+
+</body>
+
+</html>
