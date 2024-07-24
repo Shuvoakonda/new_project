@@ -154,34 +154,46 @@
                                                 <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
                                                     src="assets/images/window-sld.jpg" alt="">
                                                 <label for="">dry-keep</label>
-                                                <div class="d-flex mx-auto">
-                                                    <img x-show="expanded" x-collapse src="/assets/door.svg" alt=""
-                                                        style="width:100px; height: 100px;">
-                                                    <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
-                                                        style="width:100px; height: 100px;">
-                                                    
-                                                </div>
+
+                                                <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
+                                                    style="width:100px; height: 100px;">
+
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-6 col-sm-6">
-                                            <div class="d-flex flex-column align-items-center">
-                                                <img style="width:150px; height: 150px;"
+                                            <div x-data="{ expanded: false }"
+                                                class="d-flex flex-column align-items-center">
+                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
                                                     src="assets/images/window-slide.png" alt="">
                                                 <label for="">keep</label>
+
+                                                <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
+                                                    style="width:100px; height: 100px;">
+
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-6 col-sm-6">
-                                            <div class="d-flex flex-column align-items-center">
-                                                <img style="width:150px; height: 150px;"
+                                            <div x-data="{ expanded: false }"
+                                                class="d-flex flex-column align-items-center">
+                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
                                                     src="assets/images/window-slide.png" alt="">
                                                 <label for="">hinges</label>
+
+                                                <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
+                                                    style="width:100px; height: 100px;">
+
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-6 col-sm-6">
-                                            <div class="d-flex flex-column align-items-center">
-                                                <img style="width:150px; height: 150px;"
+                                            <div x-data="{ expanded: false }"
+                                                class="d-flex flex-column align-items-center">
+                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
                                                     src="assets/images/window-sld.jpg" alt="">
                                                 <label for="">sliding</label>
+
+                                                <img x-show="expanded" x-collapse src="/assets/door.svg" alt=""
+                                                    style="width:100px; height: 100px;">
+
 
                                             </div>
                                         </div>
@@ -386,13 +398,6 @@
                                     placeholder=" : nerrative"></textarea>
                             </div>
                         </div>
-                    </div>
-                    <div x-data="{ expanded: false }">
-                        <button>Toggle Content</button>
-
-                        <p x-show="expanded" x-collapse>
-                            ...
-                        </p>
                     </div>
                     <hr class="hr">
                     <div class="row">
