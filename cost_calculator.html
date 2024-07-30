@@ -94,9 +94,21 @@
         }
 
         .window-options-box {
-            padding: 10px;
-            border: 2px solid black;
+            
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
         }
+        .calculator-card{
+            width: 75%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .calculator-card{
+                width: 100% !important;
+            }
+        }
+
+       
     </style>
 </head>
 
@@ -172,8 +184,8 @@
             style="position:absolute;z-index: 10;right: 200px; bottom: 49px;" height="300" alt="">
         <div class="calculator container">
             <div class="calculator-body">
-                <div class="card" style=" height:auto;">
-                    <div class="card-body p-1">
+                <div class="card calculator-card" >
+                    <div class="card-body ">
                         <div class="row">
                             <div class="calculator-header text-center text-dark">
                                 <h2 class="mt-4">
@@ -448,7 +460,7 @@
                             </div>
 
                             <div x-data="{
-                                activeWindowRail: '2-5-rails',
+                                activeWindowRail: 'rails-3-5',
                                 types: [
                                     {
                                         key: '2-5-rails',
@@ -488,7 +500,7 @@
                             </div>
 
                             <div x-data="{
-                                activeWindowAssmble: '2-5-rails',
+                                activeWindowAssmble: 'no-dissamble',
                                 types: [
                                     {
                                         key: 'need-dissamble',
