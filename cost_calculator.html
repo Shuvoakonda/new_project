@@ -27,6 +27,76 @@
         .thumb::after {
             background: black !important;
         }
+
+
+
+        .window-options {
+            padding: 0px 30px;
+        }
+
+
+        e .type {
+            margin: 0px auto;
+        }
+
+        .type>img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+
+            border: 2px solid black !important;
+        }
+
+
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            gap:20px
+
+        }
+
+        .options .option>img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+
+            border: 2px solid black !important;
+        }
+
+        .option-active>img , .option-active>div {
+            box-shadow: 0px 0px 10px red;
+        }
+
+        .option > p , .type > p{
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .attribute-choice{
+            margin: 10px 0px;
+        }
+        .attribute-choice>.type {
+            width: 80%;
+            margin: 0px auto;
+            position: relative;
+        }
+
+        .attribute-choice>.type>span {
+            position: absolute;
+            top: -12px;
+            right: -10px;
+            font-weight: bold;
+            font-size: 10px;
+            direction: rtl;
+            text-align: left;
+
+        }
+
+        .window-options-box {
+            padding: 10px;
+            border: 2px solid black;
+        }
     </style>
 </head>
 
@@ -102,7 +172,7 @@
             style="position:absolute;z-index: 10;right: 200px; bottom: 49px;" height="300" alt="">
         <div class="calculator container">
             <div class="calculator-body">
-                <div class="card" style="width:700px; height:auto;">
+                <div class="card" style=" height:auto;">
                     <div class="card-body p-1">
                         <div class="row">
                             <div class="calculator-header text-center text-dark">
@@ -143,251 +213,320 @@
                             </div>
                         </div>
 
-
-                        <div class="slider-1 mt-4">
-                            <div class="card">
-                                <div class="card-body p-2">
-                                    <div class="row">
-                                        <div class="col-md-3 col-6 col-sm-6">
-                                            <div x-data="{ expanded: false }"
-                                                class="d-flex flex-column align-items-center">
-                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
-                                                    src="assets/images/window-sld.jpg" alt="">
-                                                <label for="">dry-keep</label>
-
-                                                <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
-                                                    style="width:100px; height: 100px;">
-
-                                            </div>
+                        <div class="window-options mt-4">
+                            <div x-data="{ activeWindowType: 'sliding', types:['dry-keep','keep','hinges','sliding'] }"
+                                class="window-types row">
+                                <template x-for="type in types" :key="type">
+                                    <div class="window-type col-lg-3 col-md-6 col-12">
+                                        <div x-on:click="activeWindowType = type"
+                                            :class=" activeWindowType === type ? 'type option-active':'type' ">
+                                            <img src="assets/images/window-sld.jpg" alt="">
+                                            <p x-text="type.replace('-', ' ')"></p>
+                                            <!-- Assuming you want to display the type name dynamically -->
                                         </div>
-                                        <div class="col-md-3 col-6 col-sm-6">
-                                            <div x-data="{ expanded: false }"
-                                                class="d-flex flex-column align-items-center">
-                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
-                                                    src="assets/images/window-slide.png" alt="">
-                                                <label for="">keep</label>
-
-                                                <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
-                                                    style="width:100px; height: 100px;">
-
+                                        <div class="options" x-data="{isSelected:1}" x-show="activeWindowType === type">
+                                            <div :class="isSelected == 0 ? 'option option-active' : 'option'" x-on:click="isSelected = 0">
+                                                <img src="assets/images/window-sld.jpg" alt="">
+                                                <p>2 Wings</p>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3 col-6 col-sm-6">
-                                            <div x-data="{ expanded: false }"
-                                                class="d-flex flex-column align-items-center">
-                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
-                                                    src="assets/images/window-slide.png" alt="">
-                                                <label for="">hinges</label>
-
-                                                <img x-show="expanded" x-collapse src="/assets/belcony.svg" alt=""
-                                                    style="width:100px; height: 100px;">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-6 col-sm-6">
-                                            <div x-data="{ expanded: false }"
-                                                class="d-flex flex-column align-items-center">
-                                                <img @click="expanded = ! expanded" style="width:150px; height: 150px;"
-                                                    src="assets/images/window-sld.jpg" alt="">
-                                                <label for="">sliding</label>
-
-                                                <img x-show="expanded" x-collapse src="/assets/door.svg" alt=""
-                                                    style="width:100px; height: 100px;">
-
-
+                                            <div :class="isSelected == 1 ? 'option option-active' : 'option'" x-on:click="isSelected = 1">
+                                                <img src="assets/images/window-sld.jpg" alt="">
+                                                <p>2 Wings</p>
                                             </div>
                                         </div>
                                     </div>
+                                </template>
+                            </div>
+                            <div class="window-options-box py-3">
+                                <div x-data="{ activeWindowAddons: 'bottom-add-on', types:
+                                [
+                                {
+                                    key:'no-add-on',
+                                    label:'no add on',
+                                    vaule:null
+                                },
+                                {
+                                    key:'top-add-on',
+                                    label:'top add on',
+                                    vaule:{
+                                        value:80,
+                                        label:'+80'
+                                    }
+                                },
+                                {
+                                    key:'top-rounded-add-on',
+                                    label:'top rounded add on',
+                                    vaule:{
+                                    label:'+220',
+                                    value:220
+                                    }
+                                },
+                                {
+                                    key:'bottom-add-on',
+                                    label:'bottom add on',
+                                    vaule:{
+                                        label:'+80',
+                                        value:80
+                                    }
+                                }
+                                ] }" class="window-addons row ">
+                                    <template x-for="type in types" :key="type.key">
+                                        <div class="window-addon attribute-choice col-md-6 col-lg-3 col-12"
+                                            x-on:click="activeWindowAddons = type.key">
+                                            <div
+                                                :class="activeWindowAddons === type.key ? 'type option-active':'type' ">
+                                                <img src="assets/images/window-sld.jpg" alt="">
+                                                <p x-text="type.label"></p>
+                                                <span x-text="type.vaule.label"></span>
+                                            </div>
+
+
+                                        </div>
+                                    </template>
+
+                                </div>
+                                <div x-data="{ activeWindowShutter: 'outer-shutter', types:
+                                [
+                                {
+                                    key:'no-shutter',
+                                    label:'no shutter',
+                                    vaule:null
+                                },
+                                {
+                                    key:'manual-shutter',
+                                    label:'manual shutter',
+                                    vaule:{
+                                        value:80,
+                                        label:'+450 +250/m'
+                                    }
+                                },
+                                {
+                                    key:'electric-shutter',
+                                    label:'electric shutter',
+                                    vaule:{
+                                    label:'+1200 +250/m',
+                                    value:220
+                                    }
+                                },
+                                {
+                                    key:'outer-shutter',
+                                    label:'outer shutter',
+                                    vaule:{
+                                        label:'+2500 +350/m',
+                                        value:80
+                                    }
+                                }
+                                ] }" class="window-shutters row ">
+                                    <template x-for="type in types" :key="type.key">
+                                        <div class="window-addon attribute-choice col-md-6 col-lg-3 col-12"
+                                            x-on:click="activeWindowShutter = type.key">
+                                            <div
+                                                :class="activeWindowShutter === type.key ? 'type option-active':'type' ">
+                                                <img src="assets/images/window-sld.jpg" alt="">
+                                                <p x-text="type.label"></p>
+                                                <span x-text="type.vaule.label"></span>
+
+                                            </div>
+
+
+                                        </div>
+                                    </template>
 
                                 </div>
                             </div>
-                        </div>
-                        <div class="slider-2 mt-4">
-                            <div class="row g-2">
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column">
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-sld.jpg"
-                                            alt="">
-                                        <label class="slider2-font">no add on</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider2-unit">80+</span>
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">top add on</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider2-unit">220+</span>
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">top rounded add on</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider2-unit">80+</span>
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">bottom add on</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column">
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">no shutter</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider2-unit-2" style="direction: ltr;">+450
-                                            +250/m</span>
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">manual shutter</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider2-unit-2" style="direction: ltr;">+1200
-                                            +250/m</span>
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">electric shutter</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider2-unit-2" style="direction: ltr;">+2500
-                                            +350/m</span>
-                                        <img style="width:120px; height: 120px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">outer shutter</label>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="slider-3 mt-4">
-                            <div class="row g-2">
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider3-unit-3" style="direction: ltr;">+120</span>
-                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">one sided reflective</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider3-unit-3" style="direction: ltr;">+50</span>
-                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">chinchila glass</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider3-unit-3" style="direction: ltr;">+50</span>
-                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">milky glass</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column">
-                                        <img style="width:110px; height: 110px;" src="assets/images/window-slide.png"
-                                            alt="">
-                                        <label class="slider2-font">clear glass</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <div x-data="{ activeWindowGlass: 'clear-glass', types:
+                                [
+                                {
+                                    key:'one-sided-reflective',
+                                    label:'one sided reflective',
+                                    vaule:{
+                                        value:120,
+                                        label:'+120'
+                                    }
+                                },
+                                {
+                                    key:'chinchila-glass',
+                                    label:'chinchila glassr',
+                                    vaule:{
+                                        value:50,
+                                        label:'+50'
+                                    }
+                                },
+                                {
+                                    key:'milky-glass',
+                                    label:'milky glass',
+                                    vaule:{
+                                    label:'+50',
+                                    value:50
+                                    }
+                                },
+                                {
+                                    key:'clear-glass',
+                                    label:'clear glass',
+                                    vaule:null
+                                }
+                                ] }" class="window-shutters row my-5">
+                                <template x-for="type in types" :key="type.key">
+                                    <div class="window-addon attribute-choice col-md-6 col-lg-3 col-12"
+                                        x-on:click="activeWindowGlass = type.key">
+                                        <div :class="activeWindowGlass === type.key ? 'type option-active':'type' ">
+                                            <img src="assets/images/window-sld.jpg" alt="">
+                                            <p x-text="type.label"></p>
+                                            <span x-text="type.vaule.label"></span>
 
-                        <div class="slider-4 mt-4">
-                            <div class="row">
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider4-unit-4" style="direction: ltr;">+230nis</span>
-                                        <div class="slider-4-bdr ">
-                                            <label class="slider4-font">RAL</label>
                                         </div>
+
+
                                     </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider4-unit-4" style="direction: ltr;">+135nis</span>
-                                        <div class="slider-4-bdr" style="background-color: var(---secondary-color);">
-                                            <label class="slider4-font">capuchino</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <span class="slider4-unit-4" style="direction: ltr;">+135nis</span>
-                                        <div class="slider-4-bdr" style="background-color: #53504bfe;">
-                                            <label class="slider4-font">dark</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6 col-sm-6">
-                                    <div class="d-flex flex-column img-unit">
-                                        <div class="slider-4-bdr">
-                                            <label class="slider4-font"></label>
-                                        </div>
-                                    </div>
-                                </div>
+                                </template>
 
                             </div>
-                        </div>
-                        <div class="bdr-slider"></div>
-                        <div class="slider-5 mt-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6 col-6 col-sm-6">
-                                            <div class="slider-5-bdr">
-                                                <span class="slider5-unit-5" style="direction: ltr;">-85nis/m</span>
-                                                <label class="slider4-font" style="direction: ltr;">2.5
-                                                    Rails</label>
+
+                            <div x-data="{
+                                activeWindowGlass: 'ral',
+                                types: [
+                                    {
+                                        key: 'ral',
+                                        label: 'RAL',
+                                        color: {
+                                            bg: '#fff',
+                                            color: '#53504b'
+                                        },
+                                        value: {
+                                            value: 230,
+                                            label: '+230ins'
+                                        }
+                                    },
+                                    {
+                                        key: 'capuchino',
+                                        label: 'Capuchino',
+                                        color: {
+                                            bg: '#ff7143',
+                                            color: '#53504b'
+                                        },
+                                        value: {
+                                            value: 135,
+                                            label: '+135ins'
+                                        }
+                                    },
+                                    {
+                                        key: 'gray',
+                                        label: 'Gray',
+                                        color: {
+                                            bg: '#353c45',
+                                            color: '#ffffff'
+                                        },
+                                        value: {
+                                            value: 135,
+                                            label: '+135ins'
+                                        }
+                                    },
+                                    {
+                                        key: 'white',
+                                        label: 'White',
+                                        color: {
+                                            bg: '#ffffff', // Fixed the color code
+                                            color: '#000000'
+                                        },
+                                        value: null // Null value handling
+                                    }
+                                ]
+                            }" class="window-colors row my-5">
+                                <template x-for="type in types" :key="type.key">
+                                    <div class="window-glasses attribute-choice col-md-6 col-lg-3 col-12"
+                                        x-on:click="activeWindowGlass = type.key">
+                                        <div :class="activeWindowGlass === type.key ? 'type option-active' : 'type'" >
+                                            <div 
+                                                :style="{margin:'0px auto',display:'flex',borderRadius:'50%',border:'2px solid black',alignItems:'center',fontWeight:'bold',justifyContent:'center',height: '118px', width: '118px', backgroundColor: type.color.bg, color: type.color.color}">
+                                                <span x-text="type.label"></span>
                                             </div>
-
-                                        </div>
-                                        <div class="col-md-6 col-6 col-sm-6 text-center">
-                                            <div class="slider-5-bdr">
-                                                <label class="slider4-font">3.5 Rails</label>
-                                            </div>
+                                            <span x-show="type.value" x-text="type.value.label"></span>
                                         </div>
                                     </div>
-                                </div>
+                                </template>
                             </div>
 
-                        </div>
-
-                        <div class="slider-6 mt-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6 col-6 col-sm-6">
-                                            <div class="slider-6-bdr">
-                                                <span class="slider6-unit-6" style="direction: ltr;">+80nis/m</span>
-                                                <label class="slider6-font" style="direction: ltr;">need
-                                                    dissamble</label>
+                            <div x-data="{
+                                activeWindowRail: '2-5-rails',
+                                types: [
+                                    {
+                                        key: '2-5-rails',
+                                        label: '2.5 Rails',
+                                        color: {
+                                            bg: '#fff',
+                                            color: '#53504b'
+                                        },
+                                        value: {
+                                            value: 230,
+                                            label: '-85ins/m'
+                                        }
+                                    },
+                                    {
+                                        key: 'rails-3-5',
+                                        label: 'Rails 3.5',
+                                        color: {
+                                            bg: '#fff',
+                                            color: '#53504b'
+                                        },
+                                        value: null
+                                    }
+                                ]
+                            }" class="window-rails row my-5">
+                                <template x-for="type in types" :key="type.key">
+                                    <div class="window-rails attribute-choice col-md-6  col-12"
+                                        x-on:click="activeWindowRail = type.key">
+                                        <div :class="activeWindowRail === type.key ? 'type option-active' : 'type'" >
+                                            <div 
+                                                :style="{margin:'0px auto',display:'flex',borderRadius:'50%',border:'2px solid black',alignItems:'center',fontWeight:'bold',justifyContent:'center',height: '118px', width: '118px', backgroundColor: type.color.bg, color: type.color.color}">
+                                                <span x-text="type.label"></span>
                                             </div>
-
-                                        </div>
-                                        <div class="col-md-6 col-6 col-sm-6 text-center">
-                                            <div class="slider-6-bdr">
-                                                <label class="slider4-font">no dissamble</label>
-                                            </div>
+                                            <span x-show="type.value" x-text="type.value.label"></span>
                                         </div>
                                     </div>
-                                </div>
+                                </template>
                             </div>
+
+                            <div x-data="{
+                                activeWindowAssmble: '2-5-rails',
+                                types: [
+                                    {
+                                        key: 'need-dissamble',
+                                        label: 'need dissamble',
+                                        color: {
+                                            bg: '#fff',
+                                            color: '#53504b'
+                                        },
+                                        value: {
+                                            value: 230,
+                                            label: '+80ins/m'
+                                        }
+                                    },
+                                    {
+                                        key: 'no-dissamble',
+                                        label: 'no dissamble',
+                                        color: {
+                                            bg: '#fff',
+                                            color: '#53504b'
+                                        },
+                                        value: null
+                                    }
+                                ]
+                            }" class="window-rails row my-5">
+                                <template x-for="type in types" :key="type.key">
+                                    <div class="window-assmbles attribute-choice col-md-6  col-12"
+                                        x-on:click="activeWindowAssmble = type.key">
+                                        <div :class="activeWindowAssmble === type.key ? 'type option-active' : 'type'" >
+                                            <div 
+                                                :style="{margin:'0px auto',display:'flex',borderRadius:'50%',border:'2px solid black',alignItems:'center',fontWeight:'bold',justifyContent:'center',height: '118px', width: '118px', backgroundColor: type.color.bg, color: type.color.color}">
+                                                <span x-text="type.label"></span>
+                                            </div>
+                                            <span x-show="type.value" x-text="type.value.label"></span>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+
                         </div>
 
 
